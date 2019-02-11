@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>VOLUNTEER REGISTRATION FORM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Load Bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!-- Load Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <!-- Load Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Boogaloo|Roboto+Condensed|Slabo+27px" rel="stylesheet">
+    <!-- Load Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Load Main Stylesheet -->
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <!-- Load sweetalert.js -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col top-margin">
+                <p class="text-center animated pulse infinite">
+                    <img src="https://awlo.org/womendecide/images/AWLO%20LOGO%20small.png" alt="AWLO Logo" width="100px">
+                </p>
+                <h1 class="text-center boogaloo" style="font-size:300%;line-height: 50%;">AWLO<br /><span class="text-center roboto"
+                        style="font-size: 50%;">VOLUNTEER</span></h1>
+                <p class="text-center slabo bold" style="font-size:100%;">
+                    REGISTRATION FORM
+                </p>
+
+            </div>
+        </div>
+        <!-- Form Body begins -->
+        <div class="row justify-content-center">
+            <form action="#" method="POST" id="form" class="needs-validation bottom-margin" novalidate>
+                <div class="row">
+                    <div class="col-md form-group">
+                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Your First Name"
+                            required>
+                        <div class="invalid-feedback">
+                            Please provide a Name.
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md form-group">
+                        <input type="text" class="form-control" id="middleName" name="middleName" placeholder="Your Middle Name" required>
+                        <div class="invalid-feedback">
+                            Please provide a Name
+                        </div>
+                        <div class="invalid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md form-group">
+                        <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Your Last Name"
+                            required>
+                        <div class="invalid-feedback">
+                            Please provide a Name.
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md form-group">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email Address"
+                            required>
+                        <div class="invalid-feedback">
+                            Please provide a valid email address.
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <small class="form-text text-muted">Kindly ensure that it is a current
+                            email.</small>
+                    </div>
+                    <div class="col-md form-group">
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your phone Number"
+                            required>
+                        <div class="invalid-feedback">
+                            Please provide a valid phone number.
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-md">
+                    <div class="form-group">
+                        <label for="location"></label>
+                        <textarea class="form-control rounded-0" id="location" placeholder="Where you currently live "
+                            rows="3" name="location" required></textarea>
+                        <div class="invalid-feedback">
+                            Please provide a current location.
+                        </div>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <legend class="col-form-label">What Area  would you like to offer your skills?</legend>
+                    <div class="form-check form-check-stacked form-group">
+                        <input type="radio" name="skills" id="registrationDesk" class="form-check-input" value="Registration Desk" required>
+                        <label for="registrationDesk" class="form-check-label">Registration Desk</label>
+                    </div>
+                    <div class="form-check form-check-stacked form-group">
+                        <input type="radio" name="skills" id="preEventSetUp" class="form-check-input" value="Pre-Event Set Up">
+                        <label for="preEventSetUp" class="form-check-label">Pre-Event Set Up</label>
+                    </div>
+                    <div class="form-check form-check-stacked form-group">
+                        <input type="radio" name="skills" id="postEventCleaning" class="form-check-input" value="Post Event Cleaning">
+                        <label for="postEventCleaning" class="form-check-label">Post Event Cleaning</label>
+                    </div>
+                    <div class="form-check form-check-stacked form-group">
+                        <input type="radio" name="skills" id="ushering" class="form-check-input" value="Ushering">
+                        <label for="ushering" class="form-check-label">Ushering</label>
+                    </div>
+                    <div class="form-check form-check-stacked form-group">
+                        <input type="radio" name="skills" id="executiveAssistant" class="form-check-input" value="Executive Assistant(Must live in Lagos)">
+                        <label for="executiveAssistant" class="form-check-label">Executive Assistant(Must live in Lagos)</label>
+                    </div>
+                    <div class="form-check form-check-stacked form-group">
+                        <input type="radio" name="skills" id="graphicDesigner" class="form-check-input" value="Graphic Designer">
+                        <label for="graphicDesigner" class="form-check-label">Graphic Designer</label>
+                    </div>
+                </div>
+            </div>
+                
+                <div class="row">
+                    <div class="col form-group">
+                        <legend class="col-form-label">List your Social Media Handles</legend>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                            </div>
+                            <input type="text" id="linkedin" name="linkedin" class="form-control">
+                        </div><br />
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text twitter"><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                            </div>
+                            <input type="text" id="twitter" name="twitter" class="form-control">
+                        </div><br />
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text instagram"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+                            </div>
+                            <input type="text" id="instagram" name="instagram" class="form-control">
+                        </div><br />
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text facebook"><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                            </div>
+                            <input type="text" id="facebook" name="facebook" class="form-control">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col form-group">
+                        <label for="reason">Why do you want to sign up?</label>
+                        <textarea rows="5" class="form-control" id="reason" name="reason"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <legend class="col-form-label">Can you do your job remotely?</legend>
+                        <div class="form-check form-check-inline form-group">
+                            <input type="radio" name="remotely" id="yes" class="form-check-input" value="Yes"
+                                required>
+                            <label for="yes" class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline form-group">
+                            <input type="radio" name="remote" id="no" class="form-check-input" value="No">
+                            <label for="no" class="form-check-label">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <legend class="col-form-label">Do  you live in Rwanda?</legend>
+                        <div class="form-check form-check-inline form-group">
+                            <input type="radio" name="rwanda" id="yes" class="form-check-input" value="Yes"
+                                required>
+                            <label for="yes" class="form-check-label">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline form-group">
+                            <input type="radio" name="rwanda" id="no" class="form-check-input" value="No">
+                            <label for="no" class="form-check-label">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md form-group">
+                        <label for="duration">How many hours are you willing to devote per week?</label>
+                        <input type="text" class="form-control" id="duration" name="duration">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md form-group">
+                        <label for="communication">Where can you easily be reached for communication?</label>
+                        <input type="text" class="form-control" id="communication" name="communication">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="text-center"><button type="submit" class="btn btn-danger" style="padding-left: 40px; padding-right:40px; margin-top:20px;">Submit</button></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="text-center">&copy; 2019 African Women in Leadership Organisation</p>
+                <small class="text-center form-text bottom-margin">Designed and Developed by <a href="https://stbensonimoh.com/about"
+                        target="_blank">Benson
+                        Imoh,ST</a> & <a href="https://anitajarikre.com/" target="_blank">Anita Jarikre</a></small>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Load Boostrap, Slip JQuery and Popper.js scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
