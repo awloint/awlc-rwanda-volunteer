@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', e => {
         RegExp = /\b[a-z]/g
 
         val = val.charAt(0).toUpperCase() + val.substr(1)
-        console.log(val)
     }
 
     document.querySelector('#middleName').onchange = e => {
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', e => {
         RegExp = /\b[a-z]/g
 
         val = val.charAt(0).toUpperCase() + val.substr(1)
-        console.log(val)
     }
 
     document.querySelector('#lastName').onchange = e => {
@@ -27,7 +25,6 @@ document.addEventListener('DOMContentLoaded', e => {
         RegExp = /\b[a-z]/g
 
         val = val.charAt(0).toUpperCase() + val.substr(1)
-        console.log(val)
     }
 
     document.querySelector('#email').onchange = e => {
@@ -35,7 +32,6 @@ document.addEventListener('DOMContentLoaded', e => {
         RegExp = /\b[a-z]/g
 
         val = val.toLowerCase()
-        console.log(val)
     }
 
     document.querySelector('#reasonForVolunteering').onchange = e => {
@@ -43,7 +39,6 @@ document.addEventListener('DOMContentLoaded', e => {
         RegExp = /\b[a-z]/g
 
         val = val.charAt(0).toUpperCase() + val.substr(1)
-        console.log(val)
     }
 
     document.querySelector('#communicationChannel').onchange = e => {
@@ -51,7 +46,6 @@ document.addEventListener('DOMContentLoaded', e => {
         RegExp = /\b[a-z]/g
 
         val = val.charAt(0).toUpperCase() + val.substr(1)
-        console.log(val)
     }
 
     const form = document.querySelector('form')
