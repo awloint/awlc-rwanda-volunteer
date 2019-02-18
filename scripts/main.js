@@ -4,6 +4,45 @@ document.addEventListener('DOMContentLoaded', e => {
     const year = date.getFullYear()
     let yearContent = document.querySelector('#year')
     yearContent.innerHTML = year
+    window.addEventListene(
+        'load')
+    $(document).ready(() => {
+        // DOM is fully loaded
+        // Capitalize the first letter of First Name
+        $('#firstName').on('change', function (e) {
+            let $this = $(this),
+                val = $this.val()
+            RegExp = /\b[a-z]/g
+
+            val = val.charAt(0).toUpperCase() + val.substr(1)
+        })
+        $(document).ready(() => {
+            // DOM is fully loaded
+            // Capitalize the first letter of Middle Name
+            $('#middleName').on('change', function (e) {
+                let $this = $(this),
+                    val = $this.val()
+                RegExp = /\b[a-z]/g
+
+                val = val.charAt(0).toUpperCase() + val.substr(1)
+            })
+            $(document).ready(() => {
+                // DOM is fully loaded
+                // Capitalize the first letter of Last Name
+                $('#lastName').on('change', function (e) {
+                    let $this = $(this),
+                        val = $this.val()
+                    RegExp = /\b[a-z]/g
+
+                    val = val.charAt(0).toUpperCase() + val.substr(1)
+                })
+                // change the email to lowercase
+                $('#email').on('change', function (e) {
+                    let $this = $(this),
+                        val = $this.val()
+                    val = val.toLowerCase()
+                })
+
 
     const form = document.querySelector('form')
     // On Form Submit
@@ -17,6 +56,7 @@ document.addEventListener('DOMContentLoaded', e => {
             }
             form.classList.add('was-validated')
         })
+       
 
         // If form doesn't have validation errors
         if (form.checkValidity() === true) {
@@ -30,3 +70,7 @@ document.addEventListener('DOMContentLoaded', e => {
         }
     })
 })
+    })
+})
+})
+
