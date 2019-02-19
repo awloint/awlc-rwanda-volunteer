@@ -12,24 +12,29 @@
  */
 // error_reporting(E_ALL);
 // ini_set('display_errors', 1);
-//Require Classes
+// Require Classes
 require '../config.php';
 require './DB.php';
 require './Notify.php';
 require './Newsletter.php';
-// Capture Post Data that is coming from the form
-$_POST = json_decode(file_get_contents('php://input'), true);
+
 $firstName = $_POST['firstName'];
 $middleName = $_POST['middleName'];
 $lastName = $_POST['lastName'];
 $email = $_POST['email'];
 $phone = $_POST['phone'];
 $location = $_POST['location'];
-$inmateFirstName = $_POST['inmateFirstName'];
-$inmateMiddleName = $_POST['inmateMiddleName'];
-$inmateLastName = $_POST['inmateLastName'];
-$prisonLocation = $_POST['prisonLocation'];
-$summaryOfCase = $_POST['summaryOfCase'];
+$skills = $_POST['skills'];
+$linkedin = $_POST['linkedin'];
+$twitter = $_POST['twitter'];
+$instagram = $_POST['instagram'];
+$facebook = $_POST['facebook'];
+$reasonForVolunteering = $_POST['reasonForVolunteering'];
+$canWorkRemotely = $_POST['canWorkRemotely'];
+$livesInRwanda = $_POST['livesInRwanda'];
+$availableTime = $_POST['availableTime'];
+$communicationChannel = $_POST['communicationChannel'];
+
 $name = $firstName . " " . $lastName;
 require './emails.php';
 $details = array(
@@ -39,11 +44,16 @@ $details = array(
     "email" => $_POST['email'],
     "phone" => $_POST['phone'],
     "location" => $_POST['location'],
-    "inmateFirstName" => $_POST['inmateFirstName'],
-    "inmateMiddleName" => $_POST['inmateMiddleName'],
-    "inmateLastName" => $_POST['inmateLastName'],
-    "prisonLocation" => $_POST['prisonLocation'],
-    "summaryOfCase" => $_POST['summaryOfCase']
+    "skills" =>$_POST['skills'],
+    "linkedin" => $_POST['linkedin'],
+    "twitter" => $_POST['twitter'],
+    "instagram" => $_POST['instagram'],
+    "facebook" => $_POST['facebook'],
+    "reasonForVolunteering" => $_POST['reasonForVolunteering'],
+    "canWorkRemotely" => $_POST['canWorkRemotely'],
+    "livesInRwanda" => $_POST['livesInRwanda'],
+    "availableTime" => $_POST['availableTime'],
+    "communicationChannel" => $_POST['communicationChannel'],
 );
 $emails = array(
     array(
@@ -52,7 +62,8 @@ $emails = array(
             "phone"         =>  $phone,
             "name"          =>  $firstName,
             "middleName"    =>  $middleName,
-            "lastName"      =>  $lastName
+            "lastName"      =>  $lastName,
+            "skills"        =>  $skills
             )
     )
 );
@@ -60,12 +71,11 @@ $db = new DB($host, $db, $username, $password);
 $notify = new Notify($smstoken, $emailHost, $emailUsername, $emailPassword, $SMTPDebug, $SMTPAuth, $SMTPSecure, $Port);
 $newsletter = new Newsletter($apiUserId, $apiSecret);
 // Put the User into the Database
-if ($db->insertUser("indigent", $details)) {
-    $notify->viaEmail("letstalk@hopebehindbarsafrica.org", "Hope Behind Bars Africa", $email, $name, $emailBodyIndigent, "Thanks for Reaching Out");
-    $notify->viaEmail("letstalk@hopebehindbarsafrica.org", "Hope Behind Bars Africa", "letstalk@hopebehindbarsafrica.org", "Admin", $emailBodyIndigentOrganisation, "New Submission about an Indigent");
-    $notify->viaSMS("HBBAfrica", "Dear {$firstName} {$lastName}, thank you for reaching out to us. Your details have been received and a representative will reach out to you shortly. Cheers!", $phone);
-    $notify->viaSMS("HBBAfrica", "Someone has submitted information about an Indigent on the ConnectLawyer app. Kindly check your email for the details.", "08073600790");
-    $notify->viaSMS("HBBAfrica", "Someone has submitted information about an Indigent on the ConnectLawyer app. Kindly check your email for the details.", "07033633243");
-    $newsletter->insertIntoList("2278719", $emails);
+if ($db->insertUser("awlc_volunteers", $details)) {
+    $notify->viaEmail("volunteer@awlo.org", "Volunter at African Women in Leadership Organisation", $email, $name, $emailBodyVolunteer, "Thanks for Signing Up");
+    $notify->viaEmail("volunteer@awlo.org", "Volunteer at African Women in Leadership Organisation", "volunteer@awlo.org", "Admin", $emailBodyOrganisation, "New Volunteer SignUp");
+    $notify->viaSMS("AWLOInt", "Dear {$firstName} {$lastName}, Thank you for volunteering and sharing your good heart with us. Kindly check your email for the next steps. Cheers!", $phone);
+    $notify->viaSMS("AWLOInt", "A volunteer just signedup for the AWLCRwanda2019. Kindly check your email for the details.", "08037594969,08022473972");
+    $newsletter->insertIntoList("2292703", $emails);
     echo json_encode("success");
 }

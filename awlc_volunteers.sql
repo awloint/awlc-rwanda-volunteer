@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 18, 2019 at 05:24 PM
+-- Generation Time: Feb 18, 2019 at 06:10 PM
 -- Server version: 5.7.25-0ubuntu0.18.04.2
 -- PHP Version: 7.2.15-0ubuntu0.18.04.1
 
@@ -17,16 +17,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `survey`
+-- Database: `test`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `volunteer_form`
+-- Table structure for table `awlc_volunteers`
 --
 
-CREATE TABLE `volunteer_form` (
+CREATE TABLE `awlc_volunteers` (
   `id` int(10) UNSIGNED NOT NULL,
   `firstName` text NOT NULL,
   `middleName` text,
@@ -52,9 +52,9 @@ CREATE TABLE `volunteer_form` (
 --
 
 --
--- Indexes for table `volunteer_form`
+-- Indexes for table `awlc_volunteers`
 --
-ALTER TABLE `volunteer_form`
+ALTER TABLE `awlc_volunteers`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
@@ -63,9 +63,9 @@ ALTER TABLE `volunteer_form`
 --
 
 --
--- AUTO_INCREMENT for table `volunteer_form`
+-- AUTO_INCREMENT for table `awlc_volunteers`
 --
-ALTER TABLE `volunteer_form`
+ALTER TABLE `awlc_volunteers`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

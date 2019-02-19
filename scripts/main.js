@@ -71,6 +71,28 @@ document.addEventListener('DOMContentLoaded', e => {
             document.querySelector('button').classList.add('btn-primary')
             document.querySelector('button').innerHTML =
                 'Loading <span class="spinner"></span><i class="fa fa-spinner fa-spin"></i></span>'
+
+            const formdata = new FormData(form)
+
+            // initiate a fetch call
+            fetch('scripts/processor.php', {
+                    method: 'post',
+                    body: formdata
+                })
+                .then(response => {
+                    return response.json()
+                })
+                .then(data => {
+                    if (data === 'success') {
+                        swal('SignUp Successful', 'Your signup was submitted successfully!', 'success')
+                        setTimeout(function () {
+                            window.location = 'https://awlo.org/awlc/inviteafriend'
+                        }, 3000)
+                    }
+                })
+                .catch(error => {
+                    console.log('The Request Failed', error)
+                })
         }
     })
 })
